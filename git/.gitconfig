@@ -4,3 +4,5 @@
         path = ~/.gitconfig.local
 [core]
 	excludesFile = ~/.gitignore_global
+[alias]
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
