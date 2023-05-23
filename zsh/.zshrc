@@ -112,4 +112,3 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias fvpn="ssh vpnc.cyperfection.de sudo /bin/systemctl start vpnc@FUINTER"
-
