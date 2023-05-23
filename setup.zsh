@@ -71,4 +71,4 @@ if [ ! -d "$dir" ]; then
 fi
 # stow actual dotfiles
 cd $script_path
-stow */
+stow --restow */
