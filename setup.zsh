@@ -48,8 +48,6 @@ sudo() {
   fi
 }
 
-log_task "running install script"
-
 script_path=${0:a:h}
 
 # install stow if not found
@@ -58,6 +56,16 @@ if ! command -v stow >/dev/null 2>&1; then
   sudo apt update --yes
   sudo apt install stow --yes
 fi
-
+# install oh-my-posh
+if ! command -v oh-my-posh >/dev/null 2>&1; then
+  log_task "Installing oh-my-posh"
+  curl -s https://ohmyposh.dev/install.sh | bash -s
+fi
+# install oh-my-zsh
+dir="$HOME/.oh-my-zsh/"
+if [ ! -d "$dir" ]; then
+  log_task "Installing oh-my-zsh"
+  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+fi
 cd $script_path
 stow */
