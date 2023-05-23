@@ -69,6 +69,12 @@ if [ ! -d "$dir" ]; then
   log_task "Installing oh-my-zsh"
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 fi
+dir="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
+# install zsh autosuggestions
+if [ ! -d "$dir" ]; then
+  log_task "Installing zsh autosuggestions"
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
 cd $script_path
 #create local git config if it does not exist
 if [ ! -f "./git/.gitconfig.local" ]; then
