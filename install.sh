@@ -2,7 +2,7 @@
 
 # -e: exit on error
 # -u: exit on unset variables
-set -e
+set -eu
 
 log_color() {
   color_code="$1"

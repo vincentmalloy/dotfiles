@@ -2,7 +2,7 @@
 
 # -e: exit on error
 # -u: exit on unset variables
-set -e
+set -eu
 
 log_color() {
   color_code="$1"
@@ -60,6 +60,8 @@ fi
 if ! command -v oh-my-posh >/dev/null 2>&1; then
   log_task "Installing oh-my-posh"
   curl -s https://ohmyposh.dev/install.sh | bash -s
+  log_task "Installing nerd Font"
+  oh-my-posh font install RobotoMono
 fi
 # install oh-my-zsh
 dir="$HOME/.oh-my-zsh/"
@@ -67,5 +69,6 @@ if [ ! -d "$dir" ]; then
   log_task "Installing oh-my-zsh"
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 fi
+# stow actual dotfiles
 cd $script_path
 stow */
