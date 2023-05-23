@@ -50,6 +50,8 @@ sudo() {
 
 log_task "running install script"
 
+script_path=${0:a:h}
+
 # install stow if not found
 if ! command -v stow >/dev/null 2>&1; then
   log_task "Installing stow"
@@ -57,4 +59,5 @@ if ! command -v stow >/dev/null 2>&1; then
   sudo apt install stow --yes
 fi
 
-stow ddev
+cd $script_path
+stow */
