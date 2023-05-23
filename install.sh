@@ -77,9 +77,9 @@ if ! command -v zsh >/dev/null 2>&1; then
   log_manual_action "log out to use your new shell"
 fi
 
-DOTFILES_REPO_HOST=${DOTFILES_REPO_HOST:-"https://github.com"}
+DOTFILES_REPO_HOST=${DOTFILES_REPO_HOST:-"git@github.com"}
 DOTFILES_USER=${DOTFILES_USER:-"vincentmalloy"}
-DOTFILES_REPO="${DOTFILES_REPO_HOST}/${DOTFILES_USER}/dotfiles"
+DOTFILES_REPO="${DOTFILES_REPO_HOST}:${DOTFILES_USER}/dotfiles.git"
 DOTFILES_BRANCH=${DOTFILES_BRANCH:-"main"}
 DOTFILES_DIR="${HOME}/.dotfiles"
 
