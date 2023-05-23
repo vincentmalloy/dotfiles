@@ -91,7 +91,7 @@ else
 fi
 
 if [ -f "${DOTFILES_DIR}/setup.zsh" ]; then
-  INSTALL_SCRIPT="${DOTFILES_DIR}/install.zsh"
+  INSTALL_SCRIPT="${DOTFILES_DIR}/setup.zsh"
 else
   error "No install script found in the dotfiles."
 fi
