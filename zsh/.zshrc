@@ -1,6 +1,4 @@
 
-# init oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme.json)"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -84,6 +82,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# init oh-my-posh
+eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme.json)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
