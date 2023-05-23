@@ -72,6 +72,7 @@ fi
 cd $script_path
 #create local git config if it does not exist
 if [ ! -f "./git/.gitconfig.local" ]; then
+  log_task "setting up git"
   log_manual_action "please enter your full name:"
   vared -p '' -c name
   log_manual_action "please enter your email adress:"
@@ -80,5 +81,6 @@ if [ ! -f "./git/.gitconfig.local" ]; then
   export email="$email"
   envsubst < gitconfig.local.template > git/.gitconfig.local
 fi
-# stow actual dotfiles
-stow --restow */
+# stow actual dotfiles (the redirect is for warnings about unrelated symlinks)
+stow --restow */ \
+  2> >(grep -v 'BUG in find_stowed_path? Absolute/relative mismatch' 1>&2)
