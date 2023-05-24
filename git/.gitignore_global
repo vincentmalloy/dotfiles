@@ -10,3 +10,5 @@
 
 # Built Visual Studio Code Extensions
 *.vsix
+# php cs fixer cache
+.php-cs-fixer.cache

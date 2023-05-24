@@ -50,11 +50,11 @@ sudo() {
 
 script_path=${0:a:h}
 
-# install stow if not found
-if ! command -v stow >/dev/null 2>&1; then
+# install xstow if not found
+if ! command -v xstow >/dev/null 2>&1; then
   log_task "Installing stow"
   sudo apt update --yes
-  sudo apt install stow --yes
+  sudo apt install xstow --yes
 fi
 # install oh-my-posh
 if ! command -v oh-my-posh >/dev/null 2>&1; then
@@ -88,5 +88,7 @@ if [ ! -f "./git/.gitconfig.local" ]; then
   envsubst < gitconfig.local.template > git/.gitconfig.local
 fi
 # stow actual dotfiles (the redirect is for warnings about unrelated symlinks)
-stow --restow */ \
-  2> >(grep -v 'BUG in find_stowed_path? Absolute/relative mismatch' 1>&2)
+xstow --restow git/
+xstow --restow zsh/
+# copy ddev commands
+cp -r ddev/.ddev ~
