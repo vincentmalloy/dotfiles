@@ -52,7 +52,7 @@ script_path=${0:a:h}
 
 # install xstow if not found
 if ! command -v xstow >/dev/null 2>&1; then
-  log_task "Installing stow"
+  log_task "Installing xstow"
   sudo apt update --yes
   sudo apt install xstow --yes
 fi
@@ -67,7 +67,7 @@ fi
 dir="$HOME/.oh-my-zsh/"
 if [ ! -d "$dir" ]; then
   log_task "Installing oh-my-zsh"
-  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+  sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
 fi
 dir="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
 # install zsh autosuggestions
@@ -87,8 +87,5 @@ if [ ! -f "./git/.gitconfig.local" ]; then
   export email="$email"
   envsubst < gitconfig.local.template > git/.gitconfig.local
 fi
-# stow actual dotfiles (the redirect is for warnings about unrelated symlinks)
-xstow --restow git/
-xstow --restow zsh/
-# copy ddev commands
-cp -r ddev/.ddev ~
+# stow actual dotfiles
+xstow --restow */
