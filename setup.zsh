@@ -63,6 +63,13 @@ if ! command -v oh-my-posh >/dev/null 2>&1; then
   log_task "Installing nerd Font"
   oh-my-posh font install RobotoMono
 fi
+# install thefuck
+if ! command -v thefuck >/dev/null 2>&1; then
+  log_task "Installing thefuck"
+  sudo apt update --yes
+  sudo apt install python3-dev python3-pip python3-setuptools
+  pip3 install thefuck --user
+fi
 # install oh-my-zsh
 dir="$HOME/.oh-my-zsh/"
 if [ ! -d "$dir" ]; then

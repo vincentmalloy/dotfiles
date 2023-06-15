@@ -31,7 +31,7 @@
               "home_icon": "\udb80\udedc",
               "style": "agnoster_short",
               "mapped_locations": {
-                "~/sites/*": "\uf0e8"
+                "~/projects/sites/*": "\uf0e8 "
               }
             },
             "style": "plain",

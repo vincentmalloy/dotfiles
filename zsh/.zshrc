@@ -10,7 +10,6 @@ plugins=(
     web-search
     copyfile
     copybuffer
-    command-not-found
     history
 )
 
@@ -18,3 +17,4 @@ source $ZSH/oh-my-zsh.sh
 
 # init oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme.json)"
+eval $(thefuck --alias fuck)
