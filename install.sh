@@ -58,7 +58,7 @@ git_clean() {
   ${git} checkout -B "${branch}"
   ${git} fetch "${remote}" "${branch}"
   ${git} reset --hard FETCH_HEAD
-  ${git} clean -fdx
+  ${git} clean -fd
   unset path remote branch git
 }
 
@@ -84,7 +84,7 @@ DOTFILES_BRANCH=${DOTFILES_BRANCH:-"main"}
 DOTFILES_DIR="${HOME}/.dotfiles"
 
 if [ -d "${DOTFILES_DIR}" ]; then
-  git_clean "${DOTFILES_DIR}" "${DOTFILES_REPO}" "${DOTFILES_BRANCH}" --exclude "${DOTFILES_DIR}/git/.gitconfig.local"
+  git_clean "${DOTFILES_DIR}" "${DOTFILES_REPO}" "${DOTFILES_BRANCH}"
 else
   log_task "Cloning '${DOTFILES_REPO}' at branch '${DOTFILES_BRANCH}' to '${DOTFILES_DIR}'"
   git clone --branch "${DOTFILES_BRANCH}" "${DOTFILES_REPO}" "${DOTFILES_DIR}"
