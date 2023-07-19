@@ -57,7 +57,7 @@ if ! command -v xstow >/dev/null 2>&1; then
   sudo apt install xstow --yes
 fi
 # install bat if not found
-if ! command -v bat >/dev/null 2>&1; then
+if ! command -v batcat >/dev/null 2>&1; then
   log_task "Installing bat"
   sudo apt update --yes
   sudo apt install bat --yes

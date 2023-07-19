@@ -14,3 +14,5 @@ alias cf="ddev typo3cms cache:flush"
 alias t3="ddev typo3cms"
 #replace code-insiders with code
 alias code="code-insiders"
+# replace cat with bat
+alias cat="batcat"
