@@ -6,6 +6,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
     zsh-autosuggestions
+    zsh-syntax-highlighting
     vscode
     web-search
     copyfile

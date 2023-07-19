@@ -56,6 +56,12 @@ if ! command -v xstow >/dev/null 2>&1; then
   sudo apt update --yes
   sudo apt install xstow --yes
 fi
+# install bat if not found
+if ! command -v bat >/dev/null 2>&1; then
+  log_task "Installing bat"
+  sudo apt update --yes
+  sudo apt install bat --yes
+fi
 # install oh-my-posh
 if ! command -v oh-my-posh >/dev/null 2>&1; then
   log_task "Installing oh-my-posh"
@@ -76,11 +82,17 @@ if [ ! -d "$dir" ]; then
   log_task "Installing oh-my-zsh"
   sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)" "" --unattended
 fi
-dir="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
 # install zsh autosuggestions
+dir="$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/"
 if [ ! -d "$dir" ]; then
   log_task "Installing zsh autosuggestions"
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+# install zsh syntax highlighting
+dir="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/"
+if [ ! -d "$dir" ]; then
+  log_task "Installing zsh autosuggestions"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 cd $script_path
 #create local git config if it does not exist
