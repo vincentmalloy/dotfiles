@@ -7,6 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-fzf-history-search
     vscode
     web-search
     copyfile
@@ -19,3 +20,7 @@ source $ZSH/oh-my-zsh.sh
 # init oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme.json)"
 eval $(thefuck --alias fuck)
+
+# options
+setopt HIST_IGNORE_ALL_DUPS
+unsetopt HIST_IGNORE_DUPS

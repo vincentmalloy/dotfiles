@@ -16,3 +16,5 @@ alias t3="ddev typo3cms"
 alias code="code-insiders"
 # replace cat with bat
 alias cat="batcat"
+# Copy public key to clipboard:
+alias pubkey="cat ~/.ssh/id_rsa.pub | clipcopy | echo '=> Public key copied to clipboard.'"

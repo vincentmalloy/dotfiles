@@ -76,6 +76,12 @@ if ! command -v thefuck >/dev/null 2>&1; then
   sudo apt install python3-dev python3-pip python3-setuptools
   pip3 install thefuck --user
 fi
+# install fzf
+if ! command -v fzf >/dev/null 2>&1; then
+  log_task "Installing fzf"
+  sudo apt update --yes
+  sudo apt install fzf --yes
+fi
 # install oh-my-zsh
 dir="$HOME/.oh-my-zsh/"
 if [ ! -d "$dir" ]; then
@@ -93,6 +99,12 @@ dir="$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/"
 if [ ! -d "$dir" ]; then
   log_task "Installing zsh autosuggestions"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+# install zsh fzf history seach
+dir="$HOME/.oh-my-zsh/custom/plugins/zsh-fzf-history-search/"
+if [ ! -d "$dir" ]; then
+  log_task "Installing zsh fsf history search"
+  git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-fzf-history-search
 fi
 cd $script_path
 #create local git config if it does not exist
