@@ -49,17 +49,24 @@ sudo() {
 }
 
 script_path=${0:a:h}
+apt_updated=false
+apt_update() {
+  if ! $apt_updated; then
+    sudo apt update --yes
+    apt_updated=true
+  fi
+}
 
 # install xstow if not found
 if ! command -v xstow >/dev/null 2>&1; then
   log_task "Installing xstow"
-  sudo apt update --yes
+  apt_update
   sudo apt install xstow --yes
 fi
 # install bat if not found
 if ! command -v batcat >/dev/null 2>&1; then
   log_task "Installing bat"
-  sudo apt update --yes
+  apt_update
   sudo apt install bat --yes
 fi
 # install oh-my-posh
@@ -72,15 +79,21 @@ fi
 # install thefuck
 if ! command -v thefuck >/dev/null 2>&1; then
   log_task "Installing thefuck"
-  sudo apt update --yes
+  apt_update
   sudo apt install python3-dev python3-pip python3-setuptools
   pip3 install thefuck --user
 fi
 # install fzf
 if ! command -v fzf >/dev/null 2>&1; then
   log_task "Installing fzf"
-  sudo apt update --yes
+  apt_update
   sudo apt install fzf --yes
+fi
+# install exa
+if ! command -v exa >/dev/null 2>&1; then
+  log_task "Installing exa"
+  apt_update
+  sudo apt install exa --yes
 fi
 # install oh-my-zsh
 dir="$HOME/.oh-my-zsh/"
