@@ -23,6 +23,7 @@ eval $(thefuck --alias fuck)
 
 # dir colors
 eval $( dircolors -b $HOME/.LS_COLORS)
+export EXA_COLORS="da=38;5;240:sn=38;5;240:sb=38;5;240"
 
 # options
 setopt HIST_IGNORE_ALL_DUPS
