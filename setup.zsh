@@ -80,7 +80,7 @@ fi
 if ! command -v thefuck >/dev/null 2>&1; then
   log_task "Installing thefuck"
   apt_update
-  sudo apt install python3-dev python3-pip python3-setuptools
+  sudo apt install python3-dev python3-pip python3-setuptools --yes
   pip3 install thefuck --user
 fi
 # install fzf

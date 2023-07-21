@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/omptheme.json)"
 eval $(thefuck --alias fuck)
 
+# dir colors
+eval $( dircolors -b $HOME/.LS_COLORS)
+
 # options
 setopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_IGNORE_DUPS
