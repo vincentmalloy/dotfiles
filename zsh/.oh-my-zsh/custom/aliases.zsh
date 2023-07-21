@@ -1,4 +1,4 @@
-alias l="exa --color=always --group-directories-first --icons -lh"
+alias l="exa --color=always --group-directories-first --icons"
 alias ll="exa --color=always --group-directories-first --icons -lah"
 alias lll="exa --color=always --group-directories-first --icons -lah --accessed --modified --created --links"
 alias mkdir="mkdir -pv"
