@@ -1,6 +1,6 @@
 alias l="exa --color=always --group-directories-first --icons"
-alias ll="exa --color=always --group-directories-first --icons -lah"
-alias lll="exa --color=always --group-directories-first --icons -lah --accessed --modified --created --links"
+alias ll="exa --color=always --group-directories-first --icons -lah --no-permissions --no-time --no-user"
+alias lll="exa --color=always --group-directories-first --icons -lah --accessed --modified --created --links --classify --group"
 alias mkdir="mkdir -pv"
 alias ping="ping -c 5"
 alias c="clear"
