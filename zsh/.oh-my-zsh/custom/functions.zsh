@@ -5,7 +5,7 @@ g() {
   if [[ $# -gt 0 ]]; then
     git "$@"
   else
-    git status
+    git status -sb
   fi
 }
 # From Dan Ryan's blog - http://danryan.co/using-antigen-for-zsh.html
