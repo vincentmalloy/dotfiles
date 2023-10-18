@@ -22,8 +22,8 @@ man () {
       man "$@"
 }
 
+# flush typo3 cache in ddev project
 flush () {
-  # flush typo3 cache in ddev project
   # get installed version of typo3/cms-core
   composer_version=`ddev composer show 'typo3/cms-core' | sed -n '/versions/s/^[^0-9]\+\([^,]\+\).*$/\1/p' | cut -d '.' -f1`
   # if composer_version > 11, use typo3, else use typo3cms
