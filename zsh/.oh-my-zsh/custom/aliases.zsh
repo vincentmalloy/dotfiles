@@ -8,6 +8,7 @@ alias wttr="curl wttr.in\?format\=3"
 alias dotfiles="code -n ~/.dotfiles"
 alias ffs="sudo !!"
 alias update="sudo apt update && sudo apt upgrade -y"
+alias countfiles="find . ! -name . -prune -print | grep -c /"
 alias e="explorer.exe ." # Open current directory in Windows Explorer
 #ddev
 alias t3="ddev typo3cms"
