@@ -89,11 +89,23 @@ if ! command -v fzf >/dev/null 2>&1; then
   apt_update
   sudo apt install fzf --yes
 fi
+# install ripgrep
+if ! command -v rg >/dev/null 2>&1; then
+  log_task "Installing ripgrep"
+  apt_update
+  sudo apt install ripgrep --yes
+fi
 # install exa
 if ! command -v exa >/dev/null 2>&1; then
   log_task "Installing exa"
   apt_update
   sudo apt install exa --yes
+fi
+# install helix
+if ! command -v hx >/dev/null 2>&1; then
+  log_task "Installing helix"
+  apt_update
+  sudo apt install helix --yes
 fi
 # install oh-my-zsh
 dir="$HOME/.oh-my-zsh/"

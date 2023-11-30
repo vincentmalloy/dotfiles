@@ -1,0 +1,5 @@
+theme="monokai_pro"
+[editor]
+true-color=true
+[editor.file-picker]
+hidden=false
