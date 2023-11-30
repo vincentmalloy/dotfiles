@@ -48,3 +48,12 @@ function frg {
           $EDITOR +"${linenumber}" "$file"
   fi
 }
+# get weather
+function wttr {
+  if [ -z $1 ];
+    then
+      curl wttr.in\?format\=3
+    else
+      curl wttr.in/$1\?format\=3
+  fi
+}

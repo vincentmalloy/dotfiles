@@ -4,7 +4,6 @@ alias lll="exa --color=always --group-directories-first --icons -lah --accessed 
 alias mkdir="mkdir -pv"
 alias ping="ping -c 5"
 alias c="clear"
-alias wttr="curl wttr.in\?format\=3"
 alias dotfiles="$EDITOR ~/.dotfiles/"
 alias ffs="sudo !!"
 alias update="sudo apt update && sudo apt upgrade -y"
